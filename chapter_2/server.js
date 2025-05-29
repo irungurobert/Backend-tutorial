@@ -5,6 +5,7 @@ const app = express()  //create backend app object that can be used to configure
 const PORT = 8383
 
 let data = ['james','bob']
+let dataHtml =''
 // HTTP VERBS && Routes (or paths)
 
 //CRUD -create-post read-get update-put and delete-delete 
@@ -18,16 +19,15 @@ app.use(express.json())
 
 
 app.get('/', (req, res)=>{
-  res.send(`
+  data.forEach((info)=>{
+    dataHtml +=`
     <body>
     <h1>
-    DATA:
+    ${info}
     </h1>
-    <p>
-    ${data}
-    </p>
-    </body>
-    `);
+    </body>`
+  })
+  res.send(dataHtml);
 })
 
 app.get('/api/data', (req,res)=>{
