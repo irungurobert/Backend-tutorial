@@ -1,5 +1,6 @@
 import express from 'express';
 import path, { dirname } from 'path'
+import { json } from 'stream/consumers';
 import { fileURLToPath } from 'url';
 
 const app = express()
@@ -10,7 +11,9 @@ const PORT = process.env.PORT || 8000
 const __filename = fileURLToPath(import.meta.url)
 //Get the directory name from the file path
 const __dirname = dirname(__filename)
-
+ 
+//middleware
+app.use(express.json())
 
 //Serves the HTML file from the public directory
 //Tells express to serve all files from the public folder 
