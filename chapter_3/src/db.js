@@ -1,6 +1,6 @@
 import { DatabaseSync } from 'node:sqlite'
 
-const db = new DatabaseSync(':memory');
+let db = new DatabaseSync(':memory');
 
 // Execute SQL statements from strings
 
@@ -22,4 +22,4 @@ db.exec(`
     )
     `)
 
-    export default db;
+    //export default db;
