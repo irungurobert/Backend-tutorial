@@ -8,11 +8,11 @@ const app = express()
 const PORT = process.env.PORT || 8000
 
 //Get the file path from the URL of the current module
-
+ 
 const __filename = fileURLToPath(import.meta.url)
 //Get the directory name from the file path
 const __dirname = dirname(__filename)
- 
+ //console.log(__filename)
 //middleware
 app.use(express.json())
 
@@ -21,14 +21,18 @@ app.use(express.json())
 // as static assets/file. Any requests for the css files will be resolved to the public directory
 
 
+
 //Serving upthe Html file from the /public directory
 
-app.use(express.static(path.join(__dirname, '../public')))
+
 
 app.get('/', (req,res) =>{
-  res.sendFile(path.join(__dirname,'public' ,'index.html'))
-})
+    res.sendFile(path.join(__dirname,'../public','index.html'))
+  })
 
+  
+
+  app.use(express.static(path.join(__dirname, '../public')))
 
 //Routes
 //app.use('/auth', authRoutes)
