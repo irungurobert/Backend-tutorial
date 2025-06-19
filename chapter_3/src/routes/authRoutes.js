@@ -4,9 +4,16 @@ import jwt from 'jsonwebtoken'
 import db from '../db.js'
 
 const router = express.Router()
+//Register a user
+ router.post('/register',(req, res)=>{
+   console.log(req.body.username)
+   res.sendStatus(201)
 
-// router.post('/register',(req, res)=>{
+ }
+)
 
-// })
+//Login user
+router.post('/login', (req,res)=>{
+})
 
 export default router;

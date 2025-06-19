@@ -1,1 +1,15 @@
 // emulate the browser
+### GET /
+
+GET http://localhost:8000
+
+### POST /
+
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+  "username":"bob",
+  "password":"password"
+}
+

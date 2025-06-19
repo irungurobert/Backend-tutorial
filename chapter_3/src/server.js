@@ -3,6 +3,7 @@ import path, { dirname } from 'path'
 import { json } from 'stream/consumers';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/authRoutes.js'
+import todoRoutes from './routes/todoRoutes.js'
 
 const app = express()
 const PORT = process.env.PORT || 8000
@@ -35,7 +36,8 @@ app.get('/', (req,res) =>{
   app.use(express.static(path.join(__dirname, '../public')))
 
 //Routes
-//app.use('/auth', authRoutes)
+app.use('/auth', authRoutes)
+app.use('/auth',todoRoutes)
 
 
 app.listen(PORT, ()=>{ 
