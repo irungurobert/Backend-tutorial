@@ -6,7 +6,10 @@ import db from '../db.js'
 const router = express.Router()
 //Register a user
  router.post('/register',(req, res)=>{
-   console.log(req.body.username)
+  const { username, password } = req.body
+
+  let hashedPassword = bcrypt.hashSync(password, 10)
+   console.log(hashedPassword)
    res.sendStatus(201)
 
  }
