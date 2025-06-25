@@ -13,3 +13,16 @@ Content-Type: application/json
   "password":"password"
 }
 
+
+### Login a user POST /AUTH/LOGIN
+
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+  "username":"bob",
+  "password":"password"
+}
+
+
+
