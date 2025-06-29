@@ -3,7 +3,7 @@
 
 GET http://localhost:8000
 
-### POST /
+### POST / register
 
 POST http://localhost:8000/auth/register
 Content-Type: application/json
